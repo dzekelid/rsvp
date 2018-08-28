@@ -1,0 +1,33 @@
+{
+	"name": "Streadata.io API Gallery - RSVP",
+	"description": "This is a repository of rsvp APIs, self-contained as a Github repository, with HTML and YAML representations of the APIs and their surrounding operations.",
+	"image": "http://template.streamdata.gallery/assets/rsvp.png",
+	"created": "2018-02-24",
+	"modified": "2018-08-28",
+	"url": "http://rsvp.streamdata.gallery/apis.json",
+	"specificationVersion": "0.14",
+	"apis": [
+		{
+			"name": "Meetup",
+			"x-api-slug": "meetup",
+			"description": "Find Meetups so you can do more of what matters to you. Or create your own group and meet people near you who share your interests.",
+			"image": "http://kinlane-productions.s3.amazonaws.com/screen-capture-api/6564-meetup.jpg",
+			"humanURL": "http://meetup.com",
+			"baseURL": "https:///",
+			"tags": "RSVP",
+			"properties": [
+				{
+					"type": "x-openapi-spec",
+					"url": "https://raw.githubusercontent.com/streamdata-gallery-topics/rsvp/master/_listings/meetup/openapi.md"
+				}
+			]
+		}
+	],
+	"tags": "RSVP",
+	"include": [
+		{
+			"name": "Meetup",
+			"url": "https://raw.githubusercontent.com/streamdata-gallery-topics/rsvp/master/_listings/meetup/apis.yaml"
+		}
+	]
+}

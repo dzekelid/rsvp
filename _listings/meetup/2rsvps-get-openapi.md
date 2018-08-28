@@ -1,8 +1,10 @@
+---
 swagger: "2.0"
 x-collection-name: Meetup
-x-complete: 1
+x-complete: 0
 info:
-  title: Meetup
+  title: Meetup RSVPs v2
+  description: Query for Event RSVPs by event
   version: 1.0.0
 host: api.meetup.com
 basePath: /
@@ -379,72 +381,17 @@ paths:
           description: OK
       tags:
       - Events
-    ws:
-      summary: WebSockets RSVP Stream
-      description: |-
-        For browsers that support it, [WebSockets](http://dev.w3.org/html5/websockets/) is a more
-        efficient alternative to the long-polling stream. This is a **push only** endpoint and will discard
-        any messages received from the client after the socket is open.
-
-        Because browser support for WebSockets is limited, we recommend that you consume this stream
-        through the [must.js](https://github.com/meetup/must.js#readme) client, which can fallback to long-polling.
-      operationId: streams
-      x-api-path-slug: 2rsvps-ws
-      parameters:
-      - in: query
-        name: api_version
-        description: "2"
-        type: string
-      - in: query
-        name: event_id
-        description: Limit notifications to a specific event id
-        type: string
-      - in: query
-        name: since_count
-        description: Request that some number of recent messages be sent immediately,
-          if available
-        type: string
-      - in: query
-        name: since_mtime
-        description: Return recent RSVPs with an mtime greater than the supplied time,
-          in milliseconds since the epoch
-        type: string
-      responses:
-        200:
-          description: OK
-      tags:
-      - Events
-      - Streaming
-      - Websockets
-  /:urlname/events/:id/payments:
-    post:
-      summary: Event Payments
-      description: Allows organizers of a group to note payments made by members for
-        an event. This is the 'Mark Paid' feature seen in the RSVP listings on event
-        details pages and affects the 'pay_status' response fields in [2/rsvps](/meetup_api/docs/2/rsvps/#response)
-        for paid events
-      operationId: events
-      x-api-path-slug: urlnameeventsidpayments-post
-      parameters:
-      - in: query
-        name: amount
-        description: The monetary amount of money the member submitted
-        type: string
-      - in: query
-        name: member
-        description: Member Id of member who made a payment
-        type: string
-      - in: query
-        name: paid_on
-        description: The time the payment was made in milliseconds from the epoc
-        type: string
-      - in: query
-        name: quantity
-        description: The number of payments made
-        type: string
-      responses:
-        200:
-          description: OK
-      tags:
-      - Events
-      - Payments
+x-streamrank:
+  polling_total_time_average: "0.11"
+  polling_size_download_average: "12284.58"
+  streaming_total_time_average: "0.06"
+  streaming_size_download_average: "6168.84"
+  change_yes: "29"
+  change_no: "2251"
+  time_percentage: "44"
+  size_percentage: "50"
+  change_percentage: "1"
+  last_run: "2018-05-12"
+  days_run: "8"
+  minute_run: "0"
+---
